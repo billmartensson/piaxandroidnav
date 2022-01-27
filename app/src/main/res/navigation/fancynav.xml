@@ -12,11 +12,31 @@
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_readmoreFragment"
-            app:destination="@id/readmoreFragment" />
+            app:destination="@id/readmoreFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_startFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/readmoreFragment"
         android:name="se.magictechnology.piaxnav.ReadmoreFragment"
         android:label="fragment_readmore"
-        tools:layout="@layout/fragment_readmore" />
+        tools:layout="@layout/fragment_readmore" >
+        <argument
+            android:name="somenicetext"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="se.magictechnology.piaxnav.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_readmoreFragment"
+            app:destination="@id/readmoreFragment" />
+    </fragment>
 </navigation>

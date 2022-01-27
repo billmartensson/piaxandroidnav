@@ -23,9 +23,12 @@ class StartFragment : Fragment() {
 
         view.findViewById<Button>(R.id.goReadmoreButton).setOnClickListener {
 
-            val action = StartFragmentDirections.actionStartFragmentToReadmoreFragment()
+            //val action = StartFragmentDirections.actionStartFragmentToReadmoreFragment("Banan")
+            //view.findNavController().navigate(action)
 
-            view.findNavController().navigate(action)
+            var thebundle = Bundle()
+            thebundle.putString("fruit", "Banan")
+            view.findNavController().navigate(R.id.action_startFragment_to_readmoreFragment, thebundle)
 
         }
     }
